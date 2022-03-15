@@ -1,0 +1,5 @@
+j ai identifié 2 classes personne et baconcomovos qui contient certaines méthodes pour lesquelles 
+je vais devoir faire quelques tests unitaires.
+j ai pu faire le renforcement des codes dans l une de 2 classes en vertus de tests unitaires efectués.
+pour chaque classe correspond une classe test a son nom.
+Veuillez voir dans les classes tests différents testes procédés.
