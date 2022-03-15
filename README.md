@@ -8,8 +8,6 @@
 
 • Définissez le workflow à mettre en place pour votre projet
 
-10 min
-
 • Rédigez un mail de partage à l'ensemble de l'équipe, dont je serai en copie, contenant
 
   - cette répartition du code,
