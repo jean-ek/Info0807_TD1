@@ -24,7 +24,18 @@ export const SignupScreen = ({ navigation }) => {
   const handleSignup = async values => {
     const { email, password } = values;
 
-    createUserWithEmailAndPassword(auth, email, password).catch(error =>
+    createUserWithEmailAndPassword(auth, email, password).then(
+      (user)=>{
+     // here you can use either the returned user object or       firebase.auth().currentUser. I will use the returned user object
+        if(user){
+          user.updateProfile({
+             displayName: "Redouane"
+             
+          }).then(
+            (s)=> {}// perform any other operation
+          )
+        }
+    }).catch(error =>
       setErrorState(error.message)
     );
   };

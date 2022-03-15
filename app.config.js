@@ -2,6 +2,9 @@ import 'dotenv/config';
 
 export default {
   expo: {
+    android: {
+      package: "com.ramymez.coursevelo"
+    },
     name: 'Expo Firebase Starter',
     slug: 'expo-firebase',
     privacy: 'public',

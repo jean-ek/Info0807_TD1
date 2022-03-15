@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet,Image } from 'react-native';
 import { Formik } from 'formik';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import LottieView from 'lottie-react-native';
+
 
 import { View, TextInput, Logo, Button, FormErrorMessage } from '../components';
 import { Images, Colors, auth } from '../config';
@@ -25,9 +27,20 @@ export const LoginScreen = ({ navigation }) => {
       <View isSafe style={styles.container}>
         <KeyboardAwareScrollView enableOnAndroid={true}>
           {/* LogoContainer: consits app logo and screen title */}
-          <View style={styles.logoContainer}>
-            <Logo uri={Images.logo} />
-            <Text style={styles.screenTitle}>Welcome back!</Text>
+          <View style={styles.logoContainer,{justifyContent:'center',alignItems: 'center'}}>
+          <Image
+        style={{height:100,width:200 ,borderRadius:50}}
+        source={require('../assets/Velo.png')}
+      />
+          <LottieView
+                style={{height: 300,width: 200}}
+                source={require('../assets/bicycle.json')}
+                autoPlay
+                loop={true}
+                speed={1}
+                
+            /> 
+        
           </View>
           <Formik
             initialValues={{
@@ -50,7 +63,7 @@ export const LoginScreen = ({ navigation }) => {
                 <TextInput
                   name='email'
                   leftIconName='email'
-                  placeholder='Enter email'
+                  placeholder='Enter ID'
                   autoCapitalize='none'
                   keyboardType='email-address'
                   textContentType='emailAddress'
@@ -109,11 +122,7 @@ export const LoginScreen = ({ navigation }) => {
       </View>
 
       {/* App info footer */}
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          Expo Firebase Starter App (based on managed workflow)
-        </Text>
-      </View>
+      
     </>
   );
 };
@@ -131,7 +140,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '700',
     color: Colors.black,
-    paddingTop: 20
+    
   },
   footer: {
     backgroundColor: Colors.white,
@@ -149,7 +158,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 8,
-    backgroundColor: Colors.orange,
+    backgroundColor: Colors.blue,
     padding: 10,
     borderRadius: 8
   },
