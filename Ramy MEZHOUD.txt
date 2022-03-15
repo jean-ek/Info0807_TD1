@@ -1,0 +1,35 @@
+Je n'ai jamais pratiqué du react native et la page ne contient pas de fonctions à renforcer, et puisque le but du tp n'est pas le dev en react.
+Je vais plutot imaginer des scénarios de tests unitaires :
+
+- La variable date n'accepte pas tout les formats de date.
+
+ try {
+        ldt = LocalDateTime.parse(value, fomatter);
+        String result = ldt.format(fomatter);
+        return result.equals(value);
+    } catch (DateTimeParseException e) {
+        try {
+            LocalDate ld = LocalDate.parse(value, fomatter);
+            String result = ld.format(fomatter);
+            return result.equals(value);
+        } catch (DateTimeParseException exp) {
+            try {
+                LocalTime lt = LocalTime.parse(value, fomatter);
+                String result = lt.format(fomatter);
+                return result.equals(value);
+            } catch (DateTimeParseException e2) {
+                // Debugging purposes
+                //e2.printStackTrace();
+            }
+        }
+    }
+
+- Il faut verifier le string avant de le caster en entier :
+
+try{
+            int number = Integer.parseInt(str);
+            System.out.println(number); // output = 25
+        }
+        catch (NumberFormatException ex){
+            ex.printStackTrace();
+        }
