@@ -3,6 +3,14 @@ Je vais plutot imaginer des scénarios de tests unitaires :
 
 - La variable date n'accepte pas tout les formats de date.
 
+AVANT :
+
+        ldt = LocalDateTime.parse(value, fomatter);
+        String result = ldt.format(fomatter);
+        return result.equals(value);
+
+APRES :
+
  try {
         ldt = LocalDateTime.parse(value, fomatter);
         String result = ldt.format(fomatter);
@@ -25,6 +33,13 @@ Je vais plutot imaginer des scénarios de tests unitaires :
     }
 
 - Il faut verifier le string avant de le caster en entier :
+
+AVANT :
+
+	    int number = Integer.parseInt(str);
+            System.out.println(number)
+
+APRES :
 
 try{
             int number = Integer.parseInt(str);
